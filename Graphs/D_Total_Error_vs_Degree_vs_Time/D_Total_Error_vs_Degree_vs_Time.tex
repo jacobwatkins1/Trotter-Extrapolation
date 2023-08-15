@@ -6,14 +6,14 @@
 \pgfplotsset{compat=1.18}
 
 \pgfplotsset{
-	log x ticks with fixed point/.style={
-		xticklabel={
-			\pgfkeys{/pgf/fpu=true}
-			\pgfmathparse{exp(\tick)}%
-			\pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
-			\pgfkeys{/pgf/fpu=false}
-		}
-	},
+%	log x ticks with fixed point/.style={
+%		xticklabel={
+%			\pgfkeys{/pgf/fpu=true}
+%			\pgfmathparse{exp(\tick)}%
+%			\pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
+%			\pgfkeys{/pgf/fpu=false}
+%		}
+%	},
 	log y ticks with fixed point/.style={
 		yticklabel={
 			\pgfkeys{/pgf/fpu=true}
@@ -28,16 +28,16 @@
 	
 	\begin{tikzpicture}
 		\begin{axis}[
-			title= {Error for Different Simulation Times},
-			xmode=log,
+			title= {Extrapolated Error for Different Simulation Times},
+%			xmode=log,
 			ymode=log,
-			log x ticks with fixed point,
+%			log x ticks with fixed point,
 			%			axis x line=bottom,
 			%			axis y line=left,
 			xlabel = {Degree of Chebyshev Approximant},
 			ylabel = {Error in Final Approximation},
 			ymin = 10^(-18), ymax = 10^(0),
-			xmin = 1, xmax = 40,
+			xmin = 1, xmax = 30,
 			grid=both,
 			legend pos = north east,
 			legend cell align={left},

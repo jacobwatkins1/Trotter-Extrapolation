@@ -28,16 +28,16 @@
 	
 	\begin{tikzpicture}
 		\begin{axis}[
-			title= {Total Resource Costs for Coherent Measurement},
+			title= {Total Error Scaling vs Measurement Error Scaling},
 			xmode=log,
 			ymode=log,
-			log x ticks with fixed point,
+	%		log x ticks with fixed point,
 			%			axis x line=bottom,
 			%			axis y line=left,
-			xlabel = {$1/\epsilon$},
-			ylabel = {Maximum Trotter Depth},
-			ymin = 1, ymax = 10^(14),
-			xmin = 0, xmax = 10^(10),
+			xlabel = {$1/\epsilon_{data}$},
+			ylabel = {$1/\epsilon$},
+			ymin = 0, ymax = 10^(12),
+			xmin = 0, xmax = 10^(16),
 			grid=both,
 			legend pos = south east,
 			legend cell align={left},
@@ -45,18 +45,18 @@
 			legend columns=2]
 
 			
-			\addplot[ blue, mark size=1pt, mark = *, only marks] table[x= Inverse_Epsilon
-			, y= N_2_Chebyshev_Nodes
-			,col sep=comma] {Data/B_Cost_vs_Total_Error.csv};
-			\addplot[ red, mark size=1pt, mark = o, only marks] table[x= Inverse_Epsilon
-			, y= N_4_Chebyshev_Nodes
-			,col sep=comma] {Data/B_Cost_vs_Total_Error.csv};
-			\addplot[ green, mark size=1pt, mark = *, only marks] table[x= Inverse_Epsilon
-			, y= N_6_Chebyshev_Nodes
-			,col sep=comma] {Data/B_Cost_vs_Total_Error.csv};
-			\addplot[ black, mark size=1pt, mark = asterisk, only marks] table[x= Inverse_Epsilon
-			, y= N_8_Chebyshev_Nodes
-			,col sep=comma] {Data/B_Cost_vs_Total_Error.csv};
+			\addplot[ blue, mark size=1pt, mark = *, only marks] table[x= Inverse_Data_Epsilon
+			, y= Total_Error_N_2_Chebyshev Nodes
+			,col sep=comma] {Data/C_Total_Error_vs_Data_Error.csv};
+			\addplot[ red, mark size=1pt, mark = o, only marks] table[x= Inverse_Data_Epsilon
+			, y= Total_Error_N_4_Chebyshev Nodes
+			,col sep=comma] {Data/C_Total_Error_vs_Data_Error.csv};
+			\addplot[ green, mark size=1pt, mark = *, only marks] table[x= Inverse_Data_Epsilon
+			, y= Total_Error_N_6_Chebyshev Nodes
+			,col sep=comma] {Data/C_Total_Error_vs_Data_Error.csv};
+			\addplot[ black, mark size=1pt, mark = asterisk, only marks] table[x= Inverse_Data_Epsilon
+			, y= Total_Error_N_8_Chebyshev Nodes
+			,col sep=comma] {Data/C_Total_Error_vs_Data_Error.csv};
 			\legend{N=2, N=4, N=6, N=8}
 		\end{axis}
 		

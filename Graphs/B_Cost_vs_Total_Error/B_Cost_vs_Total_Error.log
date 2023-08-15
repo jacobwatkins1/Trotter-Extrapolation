@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.17)  15 AUG 2023 10:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.17)  15 AUG 2023 10:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -546,10 +546,10 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (./B_Cost_vs_Total_Error.aux) ) 
 Here is how much of TeX's memory you used:
- 22839 strings out of 474971
- 610703 string characters out of 5780120
+ 22826 strings out of 474971
+ 610408 string characters out of 5780120
  1083801 words of memory out of 5000000
- 44002 multiletter control sequences out of 15000+600000
+ 43989 multiletter control sequences out of 15000+600000
  469259 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  100i,18n,104p,717b,2167s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -557,7 +557,7 @@ Here is how much of TeX's memory you used:
 msfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 >
-Output written on B_Cost_vs_Total_Error.pdf (1 page, 40386 bytes).
+Output written on B_Cost_vs_Total_Error.pdf (1 page, 40766 bytes).
 PDF statistics:
  26 PDF objects out of 1000 (max. 8388607)
  16 compressed objects within 1 object stream
