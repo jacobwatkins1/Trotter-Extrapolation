@@ -1,0 +1,59 @@
+\documentclass[convert={density=300,size=1080x800,outext=.png}]{standalone}
+
+\usepackage{tikz,braket,pgfplots}
+
+\usepackage{color}
+\pgfplotsset{compat=1.18}
+
+\pgfplotsset{
+%	log x ticks with fixed point/.style={
+%		xticklabel={
+%			\pgfkeys{/pgf/fpu=true}
+%			\pgfmathparse{exp(\tick)}%
+%			\pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
+%			\pgfkeys{/pgf/fpu=false}
+%		}
+%	},
+	log y ticks with fixed point/.style={
+		yticklabel={
+			\pgfkeys{/pgf/fpu=true}
+			\pgfmathparse{exp(\tick)}%
+			\pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
+			\pgfkeys{/pgf/fpu=false}
+		}
+	}
+}
+
+\begin{document}
+	
+	\begin{tikzpicture}
+		\begin{axis}[
+			title= {Extrapolated Error for Different Simulation Times},
+%			xmode=log,
+			ymode=log,
+%			log x ticks with fixed point,
+			%			axis x line=bottom,
+			%			axis y line=left,
+			xlabel = {Degree of Chebyshev Approximant},
+			ylabel = {Error in Final Approximation},
+			ymin = 10^(-18), ymax = 10^(0),
+			xmin = 1, xmax = 30,
+			grid=both,
+			legend pos = north east,
+			legend cell align={left},
+			legend style={nodes={scale=0.65, transform shape}},
+			legend columns=2]
+
+			
+			\addplot[ blue, mark size=1pt, mark = *, only marks] table[x= Degree, y= Time_0.1,col sep=comma] {Data/D_Total_Error_vs_Degree_vs_Time.csv};
+			\addplot[ red, mark size=1pt, mark = o, only marks] table[x= Degree, y= Time_1,col sep=comma] {data/D_Total_Error_vs_Degree_vs_Time.csv};
+			\addplot[ green, mark size=1pt, mark = *, only marks] table[x= Degree, y= Time_10,col sep=comma] {Data/D_Total_Error_vs_Degree_vs_Time.csv};
+			\addplot[ black, mark size=1pt, mark = asterisk, only marks] table[x= Degree, y= Time_100,col sep=comma] {Data/D_Total_Error_vs_Degree_vs_Time.csv};
+			\legend{T=0.1, T=1, T=10, T=100}
+		\end{axis}
+		
+
+	\end{tikzpicture}
+
+
+\end{document}
