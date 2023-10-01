@@ -1,0 +1,10 @@
+﻿Trotter_Depth,Extrapolated_Error,Direct_Measurement_Error,hlist,Observable Strings,List_of_Parameters,Parameter_Values
+7.5,0.00404389,0.004044584,-0.463755626,{0: 'Z'},Simulation Time,1
+15,4.11476E-06,0.001186168,0.679681251,{4: 'Z'},Trotter Order,2
+22.5,9.92413E-07,0.000543326,-0.653806368,{1: 'X'},Number Qubits,5
+30,8.7079E-07,0.000307842,0.006851333,,Initial State String,0j0j0j0j(1+0j)0j0j0j0j0j0j0j0j0j0j0j0j0j0j0j0j0j0j0j0j0j0j0j0j0j0j0j
+37.5,1.21074E-06,0.000197647,0.700299413,,,
+45,8.53561E-08,0.000138148,,,,
+52.5,3.67816E-07,0.000101216,,,,
+60,1.46708E-06,7.76292E-05,,,,
+67.5,4.08357E-07,6.18123E-05,,,,

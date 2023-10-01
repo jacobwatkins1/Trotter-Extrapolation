@@ -1,0 +1,67 @@
+\documentclass[convert={density=300,size=1080x800,outext=.png}]{standalone}
+
+\usepackage{tikz,braket,pgfplots}
+
+\usepackage{color}
+\pgfplotsset{compat=1.18}
+
+\pgfplotsset{
+	log x ticks with fixed point/.style={
+		xticklabel={
+			\pgfkeys{/pgf/fpu=true}
+			\pgfmathparse{exp(\tick)}%
+			\pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
+			\pgfkeys{/pgf/fpu=false}
+		}
+	},
+	log y ticks with fixed point/.style={
+		yticklabel={
+			\pgfkeys{/pgf/fpu=true}
+			\pgfmathparse{exp(\tick)}%
+			\pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
+			\pgfkeys{/pgf/fpu=false}
+		}
+	}
+}
+
+\begin{document}
+	
+	\begin{tikzpicture}
+		\begin{axis}[
+			title= {Total Resource Costs for Coherent Measurement},
+			xmode=log,
+			ymode=log,
+	%		log x ticks with fixed point,
+			%			axis x line=bottom,
+			%			axis y line=left,
+			xlabel = {$1/\epsilon$},
+			ylabel = {Maximum Trotter Depth},
+			ymin = 1, ymax = 10^(14),
+			xmin = 0, xmax = 10^(10),
+			grid=both,
+			legend pos = south east,
+			legend cell align={left},
+			legend style={nodes={scale=0.65, transform shape}},
+			legend columns=2]
+
+			
+			\addplot[ blue, mark size=1pt, mark = *, only marks] table[x= Inverse_Epsilon
+			, y= N_2_Chebyshev_Nodes
+			,col sep=comma] {Data/B_Cost_vs_Total_Error.csv};
+			\addplot[ red, mark size=1pt, mark = o, only marks] table[x= Inverse_Epsilon
+			, y= N_4_Chebyshev_Nodes
+			,col sep=comma] {Data/B_Cost_vs_Total_Error.csv};
+			\addplot[ green, mark size=1pt, mark = *, only marks] table[x= Inverse_Epsilon
+			, y= N_6_Chebyshev_Nodes
+			,col sep=comma] {Data/B_Cost_vs_Total_Error.csv};
+			\addplot[ black, mark size=1pt, mark = asterisk, only marks] table[x= Inverse_Epsilon
+			, y= N_8_Chebyshev_Nodes
+			,col sep=comma] {Data/B_Cost_vs_Total_Error.csv};
+			\legend{N=2, N=4, N=6, N=8}
+		\end{axis}
+		
+
+	\end{tikzpicture}
+
+
+\end{document}

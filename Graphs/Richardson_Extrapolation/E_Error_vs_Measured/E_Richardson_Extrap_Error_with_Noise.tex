@@ -1,0 +1,60 @@
+\documentclass[convert={density=300,size=1080x800,outext=.png}]{standalone}
+
+\usepackage{tikz,braket,pgfplots}
+
+\usepackage{color}
+\pgfplotsset{compat=1.18}
+
+\pgfplotsset{
+%	log x ticks with fixed point/.style={
+%		xticklabel={
+%			\pgfkeys{/pgf/fpu=true}
+%			\pgfmathparse{exp(\tick)}%
+%			\pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
+%			\pgfkeys{/pgf/fpu=false}
+%		}
+%	},
+	log y ticks with fixed point/.style={
+		yticklabel={
+			\pgfkeys{/pgf/fpu=true}
+			\pgfmathparse{exp(\tick)}%
+			\pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
+			\pgfkeys{/pgf/fpu=false}
+		}
+	}
+}
+
+\begin{document}
+	
+	\begin{tikzpicture}
+		\begin{axis}[
+			title= {Extrapolated Error vs. Measured Error for $T=1$},
+			%xmode=log,
+			ymode=log,
+%			log x ticks with fixed point,
+			%			axis x line=bottom,
+			%			axis y line=left,
+			xlabel = {Maximum Number of Trotter Steps},
+			ylabel = {Error in Final Approximation},
+			ymin = 10^(-16), ymax = 10^(0),
+			xmin = 0, xmax = 80,
+			grid=both,
+			legend pos = south west,
+			legend cell align={left},
+			legend style={nodes={scale=0.65, transform shape}},
+			legend columns=1]
+
+			
+			\addplot[ blue, mark size=1pt, mark = *, only marks] table[x= Trotter_Depth
+			, y= Extrapolated_Error,col sep=comma] {Data/E_Richardson_Extrap_Error_with_Error.csv};
+			\addplot[ red, mark size=1pt, mark = o, only marks] table[x= Trotter_Depth
+			, y= Direct_Measurement_Error,col sep=comma] {Data/E_Richardson_Extrap_Error_with_Error.csv};
+			\addplot+[red,dashed,mark=no,domain=0:80]{+10^(-6)};
+			\legend{Extrapolated Error, Directly Measured Error, Noise Threshold}
+		\end{axis}
+		
+
+	\end{tikzpicture}
+
+
+\end{document}
