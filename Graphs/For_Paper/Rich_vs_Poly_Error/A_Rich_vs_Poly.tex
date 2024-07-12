@@ -1,0 +1,57 @@
+\documentclass[convert={density=300,size=1080x800,outext=.png}]{standalone}
+
+\usepackage{tikz,braket,pgfplots}
+
+\usepackage{color}
+\pgfplotsset{compat=1.18}
+
+\pgfplotsset{
+%	log x ticks with fixed point/.style={
+%		xticklabel={
+%			\pgfkeys{/pgf/fpu=true}
+%			\pgfmathparse{exp(\tick)}%
+%			\pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
+%			\pgfkeys{/pgf/fpu=false}
+%		}
+%	},
+	log y ticks with fixed point/.style={
+		yticklabel={
+			\pgfkeys{/pgf/fpu=true}
+			\pgfmathparse{exp(\tick)}%
+			\pgfmathprintnumber[fixed relative, precision=3]{\pgfmathresult}
+			\pgfkeys{/pgf/fpu=false}
+		}
+	}
+}
+
+\begin{document}
+	
+	\begin{tikzpicture}
+		\begin{axis}[
+			title= {Richardson Extrapolation vs Polynomial Interpolation \\ vs. Standard Product Formula for $T=1$},
+			%xmode=log,
+			ymode=log,
+%			log x ticks with fixed point,
+			%			axis x line=bottom,
+			%			axis y line=left,
+			xlabel = {Maximum Number of Trotter Steps},
+			ylabel = {Error in Final Approximation},
+			ymin = 10^(-16), ymax = 10^(0),
+			xmin = 0, xmax = 140,
+			grid=both,
+			legend pos = south west,
+			legend cell align={left},
+			legend style={nodes={scale=0.65, transform shape}},
+			legend columns=1]
+
+			\addplot[ black, mark size=1pt, mark = *, only marks] table[x= Trotter_Depth_Rich, y= Direct_Measurement_Error,col sep=comma] {Data/A_Rich_Poly_Extrap.csv};
+			\addplot[ blue, mark size=1pt, mark = diamond*, only marks] table[x= Trotter_Depth_Rich, y= Richardson_Extrapolated_Error,col sep=comma] {Data/A_Rich_Poly_Extrap.csv};
+			\addplot[ red, mark size=1pt, mark = triangle*, only marks] table[x= Trotter_Depth_Poly, y= Polynomial_Extrapolated_Error,col sep=comma] {Data/A_Rich_Poly_Extrap.csv};
+			\legend{Direct Measurement, Richardson Extrapolation, Polynomial Interpolation }
+		\end{axis}
+		
+
+	\end{tikzpicture}
+
+
+\end{document}
