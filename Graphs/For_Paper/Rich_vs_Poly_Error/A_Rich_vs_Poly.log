@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.17)  12 JUL 2024 13:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.17)  12 JUL 2024 15:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -523,15 +523,15 @@ e
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-Package pgfplots info on input line 45: Using 'lua backend=false' for axis: ymo
+Package pgfplots info on input line 46: Using 'lua backend=false' for axis: ymo
 de=log unsupported (yet).
 PGFPlots: reading {Data/A_Rich_Poly_Extrap.csv}
 PGFPlots: reading {Data/A_Rich_Poly_Extrap.csv}
 PGFPlots: reading {Data/A_Rich_Poly_Extrap.csv}
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 51.
+(Font)              <7> on input line 52.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 51.
+(Font)              <5> on input line 52.
 [1
 
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
@@ -539,16 +539,16 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 Here is how much of TeX's memory you used:
  22819 strings out of 474971
  610124 string characters out of 5780120
- 1080787 words of memory out of 5000000
+ 1081787 words of memory out of 5000000
  43981 multiletter control sequences out of 15000+600000
  469259 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 100i,18n,104p,710b,2165s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 100i,18n,104p,710b,2169s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
 .pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/te
 xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on A_Rich_vs_Poly.pdf (1 page, 46297 bytes).
+Output written on A_Rich_vs_Poly.pdf (1 page, 46930 bytes).
 PDF statistics:
  31 PDF objects out of 1000 (max. 8388607)
  19 compressed objects within 1 object stream
