@@ -29,27 +29,26 @@
 	\begin{tikzpicture}
 		\begin{axis}[
 			align =center, 
-			title= {Richardson Extrapolation vs. Polynomial Interpolation \\ vs. Standard Product Formula with Error},
+			title= {Increasing Richardson Extrapolation Degree \\ at Different Simulation Times},
 			%xmode=log,
 			ymode=log,
 %			log x ticks with fixed point,
 			%			axis x line=bottom,
 			%			axis y line=left,
-			xlabel = {Maximum Number of Trotter Steps},
+			xlabel = {Degree of Extrapolation},
 			ylabel = {Error in Final Approximation},
 			ymin = 10^(-16), ymax = 10^(0),
-			xmin = 0, xmax = 140,
+			xmin = 0, xmax = 11,
 			grid=both,
 			legend pos = south west,
 			legend cell align={left},
 			legend style={nodes={scale=0.65, transform shape}},
 			legend columns=1]
 
-			\addplot[ black, mark size=1pt, mark = *, only marks] table[x= Trotter_Depth_Rich, y= Direct_Measurement_Error,col sep=comma] {Data/B_Measurements_with_Error.csv};
-			\addplot[ blue, mark size=1pt, mark = diamond*, only marks] table[x= Trotter_Depth_Rich, y= Richardson_Extrapolated_Error,col sep=comma] {Data/B_Measurements_with_Error.csv};
-			\addplot[ red, mark size=1pt, mark = triangle*, only marks] table[x= Trotter_Depth_Poly, y= Polynomial_Extrapolated_Error,col sep=comma] {Data/B_Measurements_with_Error.csv};
-			\addplot+[red,dashed,mark=no,domain=0:140]{+10^(-5)};
-			\legend{Direct Measurement, Richardson Extrapolation, Polynomial Interpolation, Noise Threshold }
+			\addplot[ black, mark size=1pt, mark = *, only marks] table[x= Richardson_Degree_Time_1, y= Richardson_Error_Time_1,col sep=comma] {Data/C_Degree_vs_Time.csv};
+			\addplot[ blue, mark size=1pt, mark = diamond*, only marks] table[x= Richardson_Degree_Time_1, y= Richardson_Error_Time_10,col sep=comma] {Data/C_Degree_vs_Time.csv};
+			\addplot[ red, mark size=1pt, mark = triangle*, only marks] table[x= Richardson_Degree_Time_1, y= Richardson_Error_Time_100,col sep=comma] {Data/C_Degree_vs_Time.csv};
+			\legend{Time = 1, Time = 10, Time = 100 }
 		\end{axis}
 		
 
